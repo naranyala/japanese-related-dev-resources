@@ -9,6 +9,7 @@ A curated list of awesome Japanese-related developer resources, libraries, APIs,
 - [Dates & Holidays](#dates--holidays)
 - [Dictionaries & Datasets](#dictionaries--datasets)
 - [Fonts](#fonts)
+- [Typography & Text Layout](#typography--text-layout)
 - [APIs](#apis)
 - [Machine Learning & AI](#machine-learning--ai)
 - [Data Analysis & Finance](#data-analysis--finance)
@@ -35,6 +36,9 @@ Libraries for tokenization, morphological analysis, and POS tagging.
     *   [Janome](https://mocobeta.github.io/janome/) - Japanese morphological analysis engine written in pure Python.
     *   [spaCy Japanese](https://spacy.io/models/ja) - Japanese models for spaCy (using Sudachi/MeCab under the hood).
     *   [Ginza](https://github.com/megagonlabs/ginza) - Japanese NLP Library based on spaCy and SudachiPy.
+    *   [nagisa](https://github.com/taishi-i/nagisa) - A simple, easy-to-use Japanese word segmenter and POS-tagger based on recurrent neural networks.
+    *   [SudachiPy](https://github.com/WorksApplications/SudachiPy) - A highly configurable Python version of the Sudachi morphological analyzer.
+    *   [rhoknp](https://github.com/ku-nlp/rhoknp) - A modern Python binding for Juman++ and KNP (Kyoto University's NLP tools) providing intuitive access to morphology and dependencies.
 *   **C/C++**
     *   [MeCab](https://taku910.github.io/mecab/) - Yet Another Part-of-Speech and Morphological Analyzer.
 
@@ -47,6 +51,8 @@ Tools for converting between Kanji, Hiragana, Katakana, and Romaji.
 *   **Python**
     *   [Cutlet](https://github.com/polm/cutlet) - A Japanese to Romaji converter.
     *   [pykakasi](https://github.com/miurahr/pykakasi) - Python implementation of Kakasi (Kanji Kana Simple Inverter).
+    *   [jaconv](https://github.com/ikegami-yukino/jaconv) - A pure-Python library for converting Japanese characters between Hiragana, Katakana, Hankaku (half-width), and Zenkaku (full-width).
+    *   [mojimoji](https://github.com/studio-ousia/mojimoji) - A fast converter between hankaku and zenkaku characters, written in Cython.
 *   **Ruby**
     *   [Moji](https://github.com/gimite/moji) - Ruby library for processing Japanese characters.
 *   **C**
@@ -93,6 +99,29 @@ High-quality open-source Japanese typography.
 *   [M PLUS Fonts](https://mplusfonts.github.io/) - Popular open-source Japanese font family.
 *   [BIZ UDGothic](https://fonts.google.com/specimen/BIZ+UDGothic) - Universal Design font ideal for readability.
 
+## Typography & Text Layout
+Libraries and tools for managing Japanese typesetting, line-breaking (Kinsoku Shori), punctuation spacing (Yakumono), and rendering Furigana (Ruby) in JavaScript/TypeScript projects.
+
+### Line Breaking & Kinsoku Shori
+*   [budoux](https://github.com/google/budoux) - A standalone, machine-learning-powered line-breaking library by Google. It prevents awkward line breaks by wrapping logical "phrases" in non-breaking markup, improving Japanese text readability without relying on dictionaries. Available via npm.
+*   [budou](https://github.com/google/budou) - The predecessor to BudouX, which translates Japanese text into HTML with proper line breaks using the Google Cloud Natural Language API.
+
+### Web Fonts & Punctuation Spacing (Yakumono)
+*   [YakuHanJP](https://github.com/qrac/yakuhanjp) - A specialized web font package (`yakuhanjp` on npm) exclusively for Japanese punctuation marks (Yakumono). It allows you to apply kerning/spacing adjustments to brackets and commas without affecting the main text font.
+*   [@fontsource/noto-sans-jp](https://fontsource.org/fonts/noto-sans-jp) - The recommended npm package to self-host the Noto Sans JP font, avoiding layout shifts and latency from external Google Fonts requests.
+*   [japanese-fonts-css](https://github.com/yusukebe/japanese-fonts-css) - CSS configurations via npm to provide robust, cross-platform default font stacks for Japanese typography.
+
+### Furigana (Ruby) & Layout Formatting
+*   **Native HTML & CSS** - For most web applications, native CSS features and HTML tags are the standard. The HTML `<ruby>` tag for Furigana and CSS properties like `writing-mode: vertical-rl;` for vertical text, or `line-break: strict;` and `word-break: break-all;` for standard line wrapping handle the majority of Japanese layout requirements natively.
+*   [kuroshiro](https://github.com/hexenq/kuroshiro) - While primarily for character conversion, it is extremely useful for typography as it can programmatically parse Japanese sentences and output them wrapped in proper HTML `<ruby>` tags with Furigana.
+*   [react-native-furi](https://github.com/wix/react-native-furi) - A React Native component for rendering Ruby (Furigana) characters, useful for mobile contexts where HTML `<ruby>` tags are not available.
+
+### WebGL & Canvas Typography
+Rendering Japanese text in 3D (WebGL/Three.js/PixiJS) is notoriously difficult due to the massive character set (thousands of Kanji), which makes standard bitmap font atlases memory-prohibitive.
+*   [troika-three-text](https://github.com/protectwise/troika/tree/master/packages/troika-three-text) - A robust text rendering engine for Three.js. It supports automatic runtime SDF (Signed Distance Field) generation and text layout, avoiding the need to pre-generate massive texture atlases for the entire Japanese language.
+*   [three-msdf-text-utils](https://github.com/leochocolat/three-msdf-text-utils) - Modern utilities for Three.js that allow for runtime WebAssembly-based MSDF generation from TTF files. Ideal for rendering high-quality, scalable Japanese text on demand without massive VRAM overhead.
+*   [msdf-bmfont-xml](https://github.com/soimy/msdf-bmfont-xml) - A CLI tool to pre-generate MSDF font atlases. For Japanese, developers often use this to create "subset" fonts (atlases containing only the specific Kanji/Kana used in a specific scene or game level) to save memory.
+
 ## APIs
 *   [Ekispert Web Services](https://roote.ekispert.net/info/api/) - Comprehensive Japanese transit routing and station API.
 *   [Yahoo! Japan Developer Network](https://developer.yahoo.co.jp/) - APIs for text analysis, maps, shopping, etc.
@@ -101,9 +130,20 @@ High-quality open-source Japanese typography.
 ## Machine Learning & AI
 Frameworks, models, and curated lists specific to Japanese AI research.
 
+### LLMs & Character Understanding
+Standard LLMs often struggle with Japanese due to subword tokenization failing to grasp Kanji semantics and phonology.
 *   [rinna Co., Ltd. (rinnakk)](https://github.com/rinnakk) - Prominent Japanese AI company releasing powerful Japanese LLMs (e.g., japanese-gpt-neox). Models are primarily hosted on [Hugging Face](https://huggingface.co/rinna).
-*   [CuPy](https://github.com/cupy/cupy) - High-performance NumPy/SciPy-compatible array library for GPU computing, originally developed by Preferred Networks (PFN).
 *   [awesome-japanese-llm](https://github.com/llm-jp/awesome-japanese-llm) - A comprehensive, curated list of Japanese Large Language Models (LLMs), datasets, and evaluation tools.
+*   **YOMI-Bench** - A crucial benchmark framework specifically designed to evaluate how well Japanese LLMs handle Kanji reading and phonological awareness (On-yomi vs. Kun-yomi), highlighting gaps in character-level understanding.
+
+### OCR & Manga Translation (Vertical Text)
+Traditional OCR struggles heavily with Japanese vertical text, furigana (ruby characters), and text overlaid on complex backgrounds (like manga or raw comic scans).
+*   [manga-ocr](https://github.com/kha-white/manga-ocr) - The current open-source industry standard (Python-based) for reading Japanese text from manga. It excels at parsing vertical text, furigana, and low-quality scans using a custom Vision-Encoder-Decoder model.
+*   [MangaOCR (gnurt2041)](https://github.com/gnurt2041/MangaOCR) - A lightweight, alternative implementation of manga OCR designed to run with a much smaller footprint (~8MB model size) while maintaining robust vertical text recognition.
+*   [Namida-OCR](https://github.com/Leapward-Koex/Namida-OCR) - A browser extension that runs local OCR. It includes specifically trained data for handling Japanese vertical text natively in the browser without server dependencies.
+
+### Frameworks & Infrastructure
+*   [CuPy](https://github.com/cupy/cupy) - High-performance NumPy/SciPy-compatible array library for GPU computing, originally developed by Preferred Networks (PFN).
 
 ## Data Analysis & Finance
 Tools for quantitative analysis, financial data, and official government statistics.
