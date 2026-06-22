@@ -86,11 +86,24 @@ Working with Japanese eras (Gengo) and national holidays.
 *   **Other** - The [holiday-jp](https://github.com/holiday-jp) GitHub organization maintains repositories for Go, PHP, Elixir, etc.
 
 ## Dictionaries & Datasets
+
+### Translation & Language Learning
 *   [JMdict / EDICT](http://www.edrdg.org/jmdict/edict.html) - Extensive Japanese-English dictionary project.
 *   [KANJIDIC](http://www.edrdg.org/kanjidic/kanjd2index.html) - Comprehensive database of Kanji information.
 *   [JMDict-Simplified](https://github.com/scriptin/jmdict-simplified) - Simplified JSON version of JMdict.
 *   [Tatoeba](https://tatoeba.org/en/) - A large database of example sentences with translations.
-*   [Wikipedia Japanese Dumps](https://dumps.wikimedia.org/jawiki/) - Useful corpus for training NLP models.
+
+### NLP Morphological Dictionaries
+These are the underlying vocabularies that power the tokenization and morphological analysis tools (like MeCab and Sudachi) mentioned in the NLP section.
+*   [mecab-ipadic-NEologd](https://github.com/neologd/mecab-ipadic-neologd) - A highly popular customized dictionary for MeCab that includes massive amounts of neologisms (new words), proper nouns, slang, and web-crawled vocabulary. Essential for parsing modern internet text.
+*   [UniDic](https://clrd.ninjal.ac.jp/unidic/en/) - The modern, strictly-defined morphological dictionary developed by NINJAL (National Institute for Japanese Language and Linguistics). It is the recommended standard for modern MeCab and Fugashi usage.
+*   [SudachiDict](https://github.com/WorksApplications/SudachiDict) - The lexicon used by the Sudachi analyzer. It is unique because it provides multiple dictionary sizes (Small, Core, Full) and includes normalized forms and synonym grouping out-of-the-box.
+*   [IPADIC](https://taku910.github.io/mecab/dic.html) - The legacy standard dictionary for MeCab. While historically significant, it is no longer actively updated, and UniDic or NEologd are generally preferred for new projects.
+
+### Corpora & Training Data
+*   [BCCWJ (Balanced Corpus of Contemporary Written Japanese)](https://pj.ninjal.ac.jp/corpus_center/bccwj/en/) - A massive, meticulously annotated corpus created by NINJAL, used as the foundational training data for many Japanese NLP models and the UniDic dictionary.
+*   [Kyoto University Web Document Corpus (KWDLC)](https://github.com/ku-nlp/KWDLC) - A heavily annotated corpus of Japanese web documents, providing morphology, named entity, and dependency annotations. Crucial for training tools like Juman++ and KNP.
+*   [Wikipedia Japanese Dumps](https://dumps.wikimedia.org/jawiki/) - Useful, massive raw text corpus for training language models.
 
 ## Fonts
 High-quality open-source Japanese typography.
