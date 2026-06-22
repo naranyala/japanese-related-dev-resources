@@ -135,6 +135,18 @@ Rendering Japanese text in 3D (WebGL/Three.js/PixiJS) is notoriously difficult d
 *   [three-msdf-text-utils](https://github.com/leochocolat/three-msdf-text-utils) - Modern utilities for Three.js that allow for runtime WebAssembly-based MSDF generation from TTF files. Ideal for rendering high-quality, scalable Japanese text on demand without massive VRAM overhead.
 *   [msdf-bmfont-xml](https://github.com/soimy/msdf-bmfont-xml) - A CLI tool to pre-generate MSDF font atlases. For Japanese, developers often use this to create "subset" fonts (atlases containing only the specific Kanji/Kana used in a specific scene or game level) to save memory.
 
+## Systems Programming & Low-Level Text Layout
+Libraries for text shaping, Unicode segmentation, and character encodings in systems languages (Rust, C/C++). These are foundational for rendering complex Japanese typography (vertical text, kerning, full-width characters) outside of web browsers.
+
+*   **Rust**
+    *   [OxiText](https://github.com/vertex-search/oxitext) - A comprehensive, pure-Rust text layout pipeline. It handles text shaping, bidirectional reordering, and UAX #14 line breaking, acting as a modern replacement for the traditional C stack (HarfBuzz/Pango).
+    *   [Rustybuzz](https://github.com/harfbuzz/rustybuzz) - A complete, pure-Rust port of the HarfBuzz shaping algorithm. Perfect for high-performance Japanese text shaping without C++ dependencies.
+    *   [unicode-width](https://github.com/unicode-rs/unicode-width) - An essential crate for CLI applications to accurately determine the display width of Unicode characters, successfully distinguishing between half-width (Hankaku) and full-width (Zenkaku) Japanese characters.
+    *   [Lindera](https://github.com/lindera/lindera) - A morphological analysis library written in pure Rust. It is the standard tool for segmenting Japanese text for search engines (like Tantivy).
+    *   [encoding_rs](https://github.com/hsivonen/encoding_rs) - Highly-optimized character encoding library used by Firefox, excellent for decoding legacy Japanese encodings (Shift_JIS, EUC-JP) into UTF-8.
+*   **C / C++**
+    *   [HarfBuzz](https://github.com/harfbuzz/harfbuzz) - The industry-standard text shaping engine. It is strictly responsible for converting Unicode text into properly positioned glyphs, heavily handling complex OpenType features like Japanese kerning and ruby formatting.
+
 ## APIs
 *   [Ekispert Web Services](https://roote.ekispert.net/info/api/) - Comprehensive Japanese transit routing and station API.
 *   [Yahoo! Japan Developer Network](https://developer.yahoo.co.jp/) - APIs for text analysis, maps, shopping, etc.
