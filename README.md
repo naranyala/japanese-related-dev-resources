@@ -166,6 +166,12 @@ Official government data portals, and openly available spatial/geographical data
 *   [piuccio/open-data-jp-prefectures-geojson](https://github.com/piuccio/open-data-jp-prefectures-geojson) - Clean, simplified GeoJSON file of Japanese prefectures with utility methods.
 *   [geolonia/japanese-boundaries](https://github.com/geolonia/japanese-boundaries) - Comprehensive boundary data for various administrative levels in Japan.
 
+### SVG Maps & Visualizations
+*   [geolonia/japanese-prefectures](https://github.com/geolonia/japanese-prefectures) - A clean SVG map of Japan designed for web interfaces, grouped by prefecture with data attributes for easy CSS styling.
+*   [ka215/svg-japan](https://github.com/ka215/svg-japan) - A native JavaScript plugin that generates an interactive, SVG-formatted map of Japan with support for custom colors and events.
+*   [wakabayashiyu/japan-clickable-map-svg](https://github.com/wakabayashiyu/japan-clickable-map-svg) - A repository specifically focused on a clickable SVG implementation of the Japan map.
+*   [SaitoTsutomu/japanmap](https://github.com/SaitoTsutomu/japanmap) - A Python package to generate SVG or image-based Japan maps and colorize them based on data.
+
 ## CLI & GUI Tools
 Developer tools, text editors, and command-line utilities specifically built for or excelling at Japanese text.
 
