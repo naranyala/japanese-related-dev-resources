@@ -40,7 +40,7 @@ Libraries for tokenization, morphological analysis, and POS tagging.
     *   [SudachiPy](https://github.com/WorksApplications/SudachiPy) - A highly configurable Python version of the Sudachi morphological analyzer.
     *   [rhoknp](https://github.com/ku-nlp/rhoknp) - A modern Python binding for Juman++ and KNP (Kyoto University's NLP tools) providing intuitive access to morphology and dependencies.
 *   **C/C++**
-    *   [MeCab](https://taku910.github.io/mecab/) - Yet Another Part-of-Speech and Morphological Analyzer.
+    *   [MeCab](https://github.com/taku910/mecab) - Yet Another Part-of-Speech and Morphological Analyzer.
 
 ## Character Processing
 Tools for converting between Kanji, Hiragana, Katakana, and Romaji.
