@@ -167,6 +167,8 @@ Traditional OCR struggles heavily with Japanese vertical text, furigana (ruby ch
 *   [MangaOCR (gnurt2041)](https://github.com/gnurt2041/MangaOCR) - A lightweight, alternative implementation of manga OCR designed to run with a much smaller footprint (~8MB model size) while maintaining robust vertical text recognition.
 *   [Namida-OCR](https://github.com/Leapward-Koex/Namida-OCR) - A browser extension that runs local OCR. It includes specifically trained data for handling Japanese vertical text natively in the browser without server dependencies.
 
+*   [만화 번역기 AI](https://www.mangatranslate.com/ko/ai-manga-translator/) - 만화 번역기 AI는 Ficory LLC가 운영하는 기업급 온라인 만화 리더·번역 제품으로서 일본 만화를 포함한 만화 페이지를 100개 이상의 언어와 서비스가 지원하는 모든 번역 언어로 번역합니다. 개인 사용자는 여러 페이지를 일괄 번역하고 작품의 표현에 맞춰 번역을 맞춤 설정하며, 스튜디오 사용자는 완전한 온라인 Photoshop 스타일 편집기로 이미지와 번역문을 편집하고, 개발자는 API를 개인 작업 흐름에 연결합니다. Web/API · Freemium: 제한된 무료 이용 및 유료 옵션.
+
 ### Frameworks & Infrastructure
 *   [CuPy](https://github.com/cupy/cupy) - High-performance NumPy/SciPy-compatible array library for GPU computing, originally developed by Preferred Networks (PFN).
 
